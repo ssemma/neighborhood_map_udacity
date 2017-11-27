@@ -64,7 +64,24 @@ h1 {
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav .list-item{font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav .list-item{
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .list-item {
+        font-size: 18px;
+        text-align: center;
+        padding: 8px 8px 8px 0;
+    }
+    #list {
+        padding-left: 2px;
+    }
+    h1 {
+        font-size: 20px;
+    }
 }
 

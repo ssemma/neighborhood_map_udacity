@@ -209,9 +209,9 @@ var error = function(){
     alert("Google map cannot be loaded. Something went wrong. Please reload this page.");
 };
 
-// Set the width of the side navigation to 35%
+// Set the width of the side navigation to 40%
 function openNav() {
-    document.getElementById("mySidenav").style.width = "35%";
+    document.getElementById("mySidenav").style.width = "40%";
 }
 
 // Set the width of the side navigation to 0
