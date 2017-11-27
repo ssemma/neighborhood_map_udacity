@@ -7,10 +7,10 @@ once and the infowindow will pop out. The infowindow consists a relavent wiki-ar
 the title of the place.
 
 ## Install
-1. clone the repo
+1. Clone the repo
 
 ## Instruction for running the program
-1. open **index.html**
+1. Open **index.html**
 
 ## Attributions
 1. [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
