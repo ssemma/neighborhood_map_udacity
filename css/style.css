@@ -46,7 +46,6 @@ h1 {
     transition: 0.5s;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
     top: 0;
