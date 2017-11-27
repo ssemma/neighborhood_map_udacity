@@ -1,3 +1,4 @@
+/*jshint loopfunc:true */
 var bestLocations = [
     {
      id: '0',
@@ -80,11 +81,11 @@ function populateInfoWindow(marker, infowindow) {
             success: function( response){
                 var articleList = response[1];
                 for(var i = 0; i < articleList.length; i++){
-                    articleStr = articleList[i];
+                    var articleStr = articleList[i];
                     var url = 'http://en.wikipedia.org/wiki/'+ articleStr;
                     infowindow.setContent('<div>' + marker.title + '</div>'+ '<div><a href="' + url + '">' +
                         'relative wiki-article </a></div>');
-                };
+                }
                 clearTimeout(wikiRequestTimeout);
             }
         });
@@ -202,7 +203,7 @@ var ViewModel = function() {
 
 // handle google map error
 var error = function(){
-    alert("Google map cannot be loaded. Something went wrong. Please reload this page.")
+    alert("Google map cannot be loaded. Something went wrong. Please reload this page.");
 };
 
 // Set the width of the side navigation to 35%
