@@ -70,7 +70,7 @@ function populateInfoWindow(marker, infowindow) {
         var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.article +
             '&format=json&callback=wikiCallback';
         var wikiRequestTimeout = setTimeout(function(){
-            $wikiElem.text("failed to get wikipedia resources");
+            infowindow.setContent('<div>' + marker.title + '</div><div>failed to get wikipedia resources</div>');
         }, 8000);
         
         $.ajax({
@@ -88,11 +88,10 @@ function populateInfoWindow(marker, infowindow) {
                 clearTimeout(wikiRequestTimeout);
             }
         });
-        
-        infowindow.setContent('<div>' + marker.title + '</div>');
         infowindow.open(map, marker);
     }
 }
+
 // This function takes in a COLOR, and then creates a new marker
 // icon of that color. The icon wil be 21px wide by 34 high, have an origin
 // of 0, 0 and be anchored at 10, 34).
@@ -209,14 +208,14 @@ var error = function(){
 // Set the width of the side navigation to 35%
 function openNav() {
     document.getElementById("mySidenav").style.width = "35%";
-};
+}
 
 // Set the width of the side navigation to 0
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-};
+}
 
 function startMap(){
     ko.applyBindings(new ViewModel());
-};
+}
 
