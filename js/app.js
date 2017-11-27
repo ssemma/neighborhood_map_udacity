@@ -1,4 +1,3 @@
-/*jshint loopfunc:true */
 var bestLocations = [
     {
      id: '0',
@@ -120,7 +119,6 @@ var ViewModel = function() {
     // self represent the viewmodel
     var self = this;
     // init map in the viewModel
-    // solved the problem that cannot get the values of markers when the viewmodel get called
     this.initMap = function(){
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 28.164744, lng: -80.6849976},
@@ -135,6 +133,7 @@ var ViewModel = function() {
         // Create a "highlighted location" marker color for when the user
         // mouses over the marker.
         var highlightedIcon = makeMarkerIcon('FFFF24');
+        
         
         // The following group uses the location array to create an array of markers on initialize
         for (var i = 0; i < bestLocations.length; i++) {
@@ -155,6 +154,9 @@ var ViewModel = function() {
             });
             // Push the marker to our array of markers
             markers.push(marker);
+        }
+        // Iterate that markers array
+        markers.forEach(function(marker){
             // Create an onclick event to open the large infowindow at each marker
             marker.addListener('click', function() {
                 populateInfoWindow(this, largeInfowindow);
@@ -164,10 +166,11 @@ var ViewModel = function() {
             marker.addListener('mouseover',function() {
                 this.setIcon(highlightedIcon);
             });
+            
             marker.addListener('mouseout', function() {
                 this.setIcon(defaultIcon);
             });
-        }
+        });
     };
     this.initMap();
 
